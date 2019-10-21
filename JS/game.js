@@ -27,8 +27,9 @@ function Draw_Game() {
 
   ctx.drawImage(food_Img, food.x, food.y);//Арбуз с координатами food
 
-  for (var i = 0; i < snake.length; i++) {
-    ctx
+  for (var i = 0; i < snake.length; i++) {// В цикле она будет увеличиваться если съест арбуз
+    ctx.fillStyle = "green";//Цвет змейки
+    ctx.fillRect(snake[i].x, snake[i].y, box, box);//fillRect - создать объект в массиве snake под номером [i] (отчет идет от нуля значит первый объект это голова змейки(snake[0]) которая спавница в центре x: 9 * box, y: 10 * box)
   }
 }
 
