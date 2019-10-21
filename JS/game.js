@@ -26,15 +26,15 @@ document.addEventListener("keydoun", direction);
 
 let dir;
 
-function direction (event) {
-  if (event.keyCode == 37 && dir != "right") {//Если мы нажали калавишу под кодом 37 (стрелочка влево) она сработает если до этого не нажата кнопочка под кодом 39 (стрелка в право)
-    dir = "left";
-  else if(event.keyCode == 38 && dir != "down")
-    dir = "up";
-  else if(event.keyCode == 39 && dir != "left")
-    dir = "right";
-  else if(event.keyCode == 40 && dir != "up")
-    dir = "down";
+function direction(event) {
+	if(event.keyCode == 37 && dir != "right")
+		dir = "left";
+	else if(event.keyCode == 38 && dir != "down")
+		dir = "up";
+	else if(event.keyCode == 39 && dir != "left")
+		dir = "right";
+	else if(event.keyCode == 40 && dir != "up")
+		dir = "down";
 }
 
 function Draw_Game() {
@@ -66,7 +66,7 @@ function Draw_Game() {
     y: Snake_Y
   };
 
-  snake.unshif(new_Head);//Помецаем в самое начало координаты изменённого положения головы (переписываем координаты головы на 1 box в любую сторону)
+  snake.unshift(new_Head);//Помецаем в самое начало координаты изменённого положения головы (переписываем координаты головы на 1 box в любую сторону)
 
 }
 
