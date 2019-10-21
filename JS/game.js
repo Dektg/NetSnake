@@ -4,8 +4,8 @@ const ctx = canvas.getContext("2d");//Сказал что игра в форма
 const ground = new Image();//Добавил констане ground значение изображения
 ground.src = "Image/ground.png";// Залил изображение поля в переменную (добавил ей значение)
 
-const food = new Image();//Добавил констане food значение изображения
-food.src = "Image/food.png";// Залил изображение еды в переменную (добавил ей значение)
+const food_Img = new Image();//Добавил констане food значение изображения
+food_Img.src = "Image/food.png";// Залил изображение еды в переменную (добавил ей значение)
 
 let box = 32; //Сделал переменную которая отвечает за создание одного блока (всего в поле 17*15=255 блока по 32px каждый)
 
@@ -24,6 +24,12 @@ snake [0] = {//Нулевой элемент змейки это её голов
 
 function Draw_Game() {
   ctx.drawImage(ground, 0, 0)//Нарисовал поле (ground) на всю ширену canvas
+
+  ctx.drawImage(food_Img, food.x, food.y);//Арбуз с координатами food
+
+  for (var i = 0; i < snake.length; i++) {
+    ctx
+  }
 }
 
 let game = setInterval(Draw_Game, 100);//Функция будет вызываться каждые 100 милисекунд (тоесть обновляться каждые 100 милимекунд)
