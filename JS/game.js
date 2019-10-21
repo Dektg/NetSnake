@@ -14,3 +14,5 @@ let score = 0;//Перемнная хранящая в себе счет
 function Draw_Game() {
   ctx.drawImage(ground, 0, 0)//Нарисовал поле (ground) на всю ширену canvas
 }
+
+let game = setInterval(Draw_Game, 100);//Функция будет вызываться каждые 100 милисекунд (тоесть обновляться каждые 100 милимекунд)
