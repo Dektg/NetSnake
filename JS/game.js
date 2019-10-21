@@ -26,7 +26,7 @@ document.addEventListener("keydoun", direction);
 
 let dir;
 
-function direction(event) {
+function direction (event) {
 	if(event.keyCode == 37 && dir != "right")
 		dir = "left";
 	else if(event.keyCode == 38 && dir != "down")
