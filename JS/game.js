@@ -51,6 +51,23 @@ function Draw_Game() {
   ctx.font = "35px Arial";//Шрифт
   ctx.fillText(score, box * 2, box * 1.6)//Координаты счетчика
 
+  let Snake_X = snake[0].x;
+  let Snake_Y = snake[0].y;
+
+  snake.pop();//удалить последний элемент
+
+  if (dir == "left") Snake_X -= box;
+  if (dir == "right") Snake_X += box;
+  if (dir == "down") Snake_Y += box;
+  if (dir == "up") Snake_Y -= box;
+
+  let new_Head = {
+    x: Snake_X,
+    y: Snake_Y
+  };
+
+  snake.unshif(new_Head);//Помецаем в самое начало координаты изменённого положения головы (переписываем координаты головы на 1 box в любую сторону)
+
 }
 
 let game = setInterval(Draw_Game, 100);//Функция будет вызываться каждые 100 милисекунд (тоесть обновляться каждые 100 милимекунд)
