@@ -22,6 +22,21 @@ snake [0] = {//Нулевой элемент змейки это её голов
   y: 10 * box//Отображаем ровно по центу
 };//Кривыми скобками указываем что это объект
 
+document.addEventListener("keydoun", direction);
+
+let dir;
+
+function direction (event) {
+  if (event.keyCode == 37 && dir != "right") {//Если мы нажали калавишу под кодом 37 (стрелочка влево) она сработает если до этого не нажата кнопочка под кодом 39 (стрелка в право)
+    dir = "left";
+  else if(event.keyCode == 38 && dir != "down")
+    dir = "up";
+  else if(event.keyCode == 39 && dir != "left")
+    dir = "right";
+  else if(event.keyCode == 40 && dir != "up")
+    dir = "down";
+}
+
 function Draw_Game() {
   ctx.drawImage(ground, 0, 0)//Нарисовал поле (ground) на всю ширену canvas
 
@@ -34,7 +49,7 @@ function Draw_Game() {
 
   ctx.fillStyle = "#a2d149";//Цвет текста
   ctx.font = "35px Arial";//Шрифт
-  ctx.fillText(score, box * 2, box * 1.6)
+  ctx.fillText(score, box * 2, box * 1.6)//Координаты счетчика
 
 }
 
